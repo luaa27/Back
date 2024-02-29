@@ -1,0 +1,18 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+
+//Exemplo de como criar uma tabela no BD usando o ORM do prisma
+model tbl_teste{
+  id Int @id @default(autoincrement())
+  nome String
+}
